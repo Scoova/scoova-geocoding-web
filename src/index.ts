@@ -1,7 +1,7 @@
 /**
  * @scoova/geocoding
  *
- * Pelias-compatible client for `geocoding.scoo-va.info`. Forward search,
+ * Pelias-compatible client for `api.scoo-va.info/api/v1/geocoding`. Forward search,
  * autocomplete, reverse, place lookup, structured search, and batch
  * (up to 100 mixed forward/reverse queries in one request).
  *
@@ -149,7 +149,7 @@ export class GeocodingError extends Error {
   }
 }
 
-const DEFAULT_BASE = 'https://geocoding.scoo-va.info';
+const DEFAULT_BASE = 'https://api.scoo-va.info/api/v1/geocoding';
 
 export interface ClientOptions {
   /**
@@ -158,7 +158,7 @@ export interface ClientOptions {
    * key is rate-limited; ship a real one for production traffic.
    */
   apiKey?: string;
-  /** Override the gateway base (defaults to https://geocoding.scoo-va.info). */
+  /** Override the gateway base (defaults to https://api.scoo-va.info/api/v1/geocoding). */
   baseUrl?: string;
   /**
    * Default locale for every response that carries localised labels.

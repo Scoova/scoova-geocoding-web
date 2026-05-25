@@ -1,6 +1,6 @@
 # @scoova/geocoding
 
-Pelias-compatible geocoding client for `geocoding.scoo-va.info` — forward
+Pelias-compatible geocoding client for `api.scoo-va.info/api/v1/geocoding` — forward
 search, autocomplete, reverse, place lookup, structured search, and a
 synchronous batch endpoint (up to 100 mixed forward/reverse queries per
 request).
@@ -48,7 +48,7 @@ for (const row of batch.results) {
 | option           | type     | default                            | notes                                  |
 | ---------------- | -------- | ---------------------------------- | -------------------------------------- |
 | `apiKey`         | `string` | `SCOOVA_API_KEY` env, then `demo`  | sent as `X-API-Key`                    |
-| `baseUrl`        | `string` | `https://geocoding.scoo-va.info`   |                                        |
+| `baseUrl`        | `string` | `https://api.scoo-va.info/api/v1/geocoding` |                                   |
 | `locale`         | `string` | `'en'`                             | `?locale=` + `Accept-Language`         |
 | `lang`           | `string` | —                                  | legacy alias for `locale`              |
 | `androidPackage` | `string` | —                                  | `X-Android-Package` for key restrict   |
