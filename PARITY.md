@@ -1,6 +1,6 @@
 # @scoova/geocoding — Cross-platform Parity
 
-Five SDKs, one API surface. All target the Pelias-compatible endpoints at
+Five SDKs, one API surface. All target the Geocoding endpoints at
 `geocoding.scoo-va.info`.
 
 | Platform     | Package / Path                                                  | Tests  |
@@ -23,7 +23,7 @@ GeocodingClient(baseUrl?)
 ```
 
 Common option fields: `focusPoint`, `boundaryCircle`, `boundaryRect`,
-`boundaryCountry`, `layers`, `sources`, `size`, `lang`. Defaults match Pelias —
+`boundaryCountry`, `layers`, `sources`, `size`, `lang`. Defaults match the Scoova geocoding service —
 no layer or source restrictions, default `size=10`, language falls back to `en`.
 
 ## Parity table after this session

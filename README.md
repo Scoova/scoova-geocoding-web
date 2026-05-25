@@ -1,6 +1,6 @@
 # @scoova/geocoding
 
-Pelias-compatible geocoding client for `api.scoo-va.info/api/v1/geocoding` — forward
+Geocoding geocoding client for `api.scoo-va.info/api/v1/geocoding` — forward
 search, autocomplete, reverse, place lookup, structured search, and a
 synchronous batch endpoint (up to 100 mixed forward/reverse queries per
 request).
@@ -31,7 +31,7 @@ const suggestions = await client.autocomplete('Cair');
 const nearby = await client.reverse(30.04, 31.24, { size: 1 });
 
 // Place lookup
-const place = await client.place('whosonfirst:locality:101751119');
+const place = await client.place('place data:locality:101751119');
 
 // Batch — up to 100 items, one round-trip
 const batch = await client.batch([

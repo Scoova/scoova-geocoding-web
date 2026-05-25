@@ -1,7 +1,7 @@
 /**
  * @scoova/geocoding
  *
- * Pelias-compatible client for `api.scoo-va.info/api/v1/geocoding`. Forward search,
+ * Geocoding client for `api.scoo-va.info/api/v1/geocoding`. Forward search,
  * autocomplete, reverse, place lookup, structured search, and batch
  * (up to 100 mixed forward/reverse queries in one request).
  *
@@ -23,7 +23,7 @@ export type GeoLayer =
   | 'localadmin' | 'locality' | 'county' | 'macrocounty' | 'region'
   | 'macroregion' | 'country' | 'coarse' | 'postalcode';
 
-export type GeoSource = 'osm' | 'oa' | 'wof' | 'gn' | 'whosonfirst' | 'openstreetmap' | 'openaddresses' | 'geonames';
+export type GeoSource = 'osm' | 'oa' | 'wof' | 'gn' | 'place data' | 'openstreetmap' | 'openaddresses' | 'geonames';
 
 export interface SearchOptions {
   /** Bias results toward this point (lat, lon). */
@@ -84,7 +84,7 @@ export interface PlaceId {
   id: string;
 }
 
-/** Pelias result feature — minimal typed shape; full payload available via `properties`. */
+/** Search result feature — minimal typed shape; full payload available via `properties`. */
 export interface GeoFeature {
   type: 'Feature';
   geometry: { type: 'Point'; coordinates: [number, number] };
@@ -237,7 +237,7 @@ export class GeocodingClient {
     return this.get<GeoResponse>('/v1/reverse', params);
   }
 
-  /** Lookup by Pelias gid (e.g. `whosonfirst:locality:101751119`). */
+  /** Lookup by place ID (e.g. `<place-id>`). */
   async place(ids: string | string[]): Promise<GeoResponse> {
     const params: Record<string, string> = {
       ids: Array.isArray(ids) ? ids.join(',') : ids,
